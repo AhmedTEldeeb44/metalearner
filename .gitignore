@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+data/
+.venv/
+system_memory.json
+*.csv
+*.pkl
+*.json
+cleaned_datasets/
+sucsses/
+brain/
+unused/

@@ -1,0 +1,25 @@
+# --- Core Data Science Stack ---
+pandas
+numpy
+scipy
+
+# --- Machine Learning Engines ---
+scikit-learn
+xgboost
+tensorflow
+
+# --- External APIs & Data ---
+openml
+
+# --- UI & Experience ---
+streamlit
+colorama
+tqdm
+rich
+
+# --- System Utilities ---
+joblib
+
+matplotlib
+seaborn
+imblearn
