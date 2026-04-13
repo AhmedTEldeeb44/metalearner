@@ -8,4 +8,4 @@ cd MetaLearner
 pip install -r requirements.txt
 2. Warehouse GenerationInitialize the harvester and run the automated pipeline to build the meta-knowledge base:Bashpython main.py
 3. Real-Time InferenceLaunch the AI Dashboard for instant algorithm recommendations:Bashstreamlit run app.py
-⚖️ License & CreditsArchitect: Ahmed Tamer EldeebOrganization: VeiorAI
+⚖️ License & CreditsArchitect: Ahmed Tamer Eldeeb Organization: VeiorAI
