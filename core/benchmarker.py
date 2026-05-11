@@ -20,7 +20,7 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 from sklearn.model_selection import cross_validate
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-from registry import SystemRegistry
+from .registry import SystemRegistry
 
 # --- SILENCE THE NOISE ---
 warnings.filterwarnings("ignore")

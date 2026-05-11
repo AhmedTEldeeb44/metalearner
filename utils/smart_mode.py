@@ -1,9 +1,10 @@
 import os
 from colorama import Fore, Style
-from downloader import fetch_openml_curated_batch
-from cleaner import IntelligentCleaner
-from extractor import run_dna_extraction_pipeline
-from benchmarker import MetaBenchmarker
+from core.downloader import fetch_openml_curated_batch
+from core.cleaner import IntelligentCleaner
+from core.extractor import run_dna_extraction_pipeline
+from core.benchmarker import MetaBenchmarker
+
 
 
 def run_smart_mode(registry, start_phase):

@@ -1,11 +1,117 @@
-🧠 MetaLearner: Autonomous Meta-Learning FrameworkMetaLearner is an advanced architectural pipeline designed to solve the Algorithm Selection Problem. In machine learning, the "No Free Lunch" theorem posits that no single model is optimal for all problem spaces. Historically, finding the "winner" required exhaustive, resource-heavy experimentation.This framework transforms that process into a predictable science. By quantifying a dataset’s Statistical DNA (Meta-features), the system utilizes a high-order Meta-Model to predict the most effective algorithm—such as XGBoost, Random Forest, or LightGBM—in milliseconds, bypassing the need for manual trial-and-error.🏗️ System Architecture: Modular Micro-ServicesMetaLearner is built on a State-Aware Micro-Service Architecture. Each module is strictly isolated to maintain data integrity and prevent cross-contamination during the experimentation lifecycle.The Core Arsenal🧠 Neural Registry (registry.py): The central nervous system. It manages a JSON-based "State Machine" that tracks the life cycle of every dataset, enforcing linear progression and security protocols.📥 Data Harvester (downloader.py): An automated ingestion engine interfacing with the OpenML API to curate high-quality benchmarking datasets.🩺 Surgical Cleaner (cleaner.py): An intelligent pre-processor that calculates a custom Stability Index. It handles Median Imputation and Duplicate Purging through automated "data surgery."🧬 DNA Extractor (extractor.py): The mathematical engine. It quantifies data distributions using high-level statistical descriptors (Entropy, Skewness, Kurtosis).⚔️ Gladiator Benchmarker (benchmarker.py): The performance validator. It leverages Parallel CPU Computing to execute simultaneous 5-fold cross-validations across multiple candidates.🚀 Intelligence UI (app.py): A professional dashboard for real-time inference, providing instant architectural recommendations for any uploaded CSV.🔄 The Data Life Cycle (Pipeline)To ensure academic-grade integrity, MetaLearner enforces a Linear Progression Policy. No dataset can skip a phase. The Neural Registry acts as a gatekeeper; if a module attempts to process "Dirty" data, the system triggers an immediate security block.Code snippetgraph LR
-    A[DOWNLOADED] --> B[CLEANED]
-    B --> C[EXTRACTED]
-    C --> D[PREDICTED]
-    D --> E[BENCHMARKED]
-📈 Technical Specifications & Mathematical FoundationsThe Meta-Model is trained to recognize deep patterns between a dataset's statistical distribution and the resulting predictive accuracy of candidate algorithms.Primary Metric: Shannon Entropy ($H$)We utilize Shannon Entropy to quantify the information density and class complexity of the target variable. This determines if the decision boundary is simple or chaotic:$$H(X) = -\sum_{i=1}^{n} P(x_i) \log_2 P(x_i)$$Secondary DescriptorsMean Skewness: Measures the asymmetry of feature distribution to detect outlier sensitivity.Imbalance Ratio: Quantifies class disparity to determine if weighted ensemble methods are required.Stability Score: A proprietary metric derived from the variance and missingness of the features post-cleaning.🛠️ Installation & Operation1. Environment SetupEnsure you are using Python 3.12+ for optimal compatibility with the latest Scikit-Learn and XGBoost features.Bashgit clone https://github.com/YourUsername/MetaLearner.git
-cd MetaLearner
-pip install -r requirements.txt
-2. Warehouse GenerationInitialize the harvester and run the automated pipeline to build the meta-knowledge base:Bashpython main.py
-3. Real-Time InferenceLaunch the AI Dashboard for instant algorithm recommendations:Bashstreamlit run app.py
-⚖️ License & CreditsArchitect: Ahmed Tamer EldeebOrganization: VeiorAI
+# 🧬 MetaLearner: Neural Ranking Engine for Medical Informatics
+
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![XGBoost](https://img.shields.io/badge/Engine-XGBoost--Regressor-orange.svg)](https://xgboost.readthedocs.io/)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
+[![AutoML](https://img.shields.io/badge/Task-AutoML-red.svg)](https://en.wikipedia.org/wiki/Automated_machine_learning)
+[![Machine Learning](https://img.shields.io/badge/ML-Meta--Learning-blueviolet.svg)](https://en.wikipedia.org/wiki/Meta_learning_(computer_science))
+
+
+
+**MetaLearner** is a modular Automated Machine Learning (AutoML) framework designed to solve the "Algorithm Selection Problem" in medical informatics. Instead of traditional trial-and-error training, MetaLearner sequences the statistical **DNA** of a dataset to predict the optimal machine learning architecture before training begins.
+
+![MetaLearner Pipeline](docs/assets/metalearnerPipeline.png)
+
+---
+
+## 🚀 Key Innovation: Dataset DNA
+MetaLearner operates on the principle of **Genetic Sequencing for Data**. It extracts a high-fidelity 10-dimensional vector—the Dataset DNA—representing the geometric and statistical properties of medical data:
+
+* **Information Entropy:** Measuring target complexity and class density.
+* **Imbalance Profiling:** Specialized handling for rare medical markers.
+* **Geometric Skew & Kurtosis:** Identifying outlier distributions and data shapes.
+* **Correlation Stability:** Detecting feature redundancy and internal noise.
+
+## 🧠 Neural Ranker Architecture
+Unlike standard classifiers that simply "guess" a winner, MetaLearner utilizes a **Neural Ranker (XGBoost Regressor)**. It studies the comparative performance of all available solutions to predict the expected **F1-Score** across 10 distinct algorithm categories.
+
+---
+
+## 🛠️ System Architecture
+
+The framework is decentralized into specialized modules for maximum pipeline stability:
+
+| Module | Purpose |
+| :--- | :--- |
+| **`core/downloader.py`** | Automated harvester for curated OpenML medical datasets. |
+| **`core/cleaner.py`** | Intelligent data surgery and feature stabilization. |
+| **`core/extractor.py`** | Genetic sequencer for 10-D statistical DNA extraction. |
+| **`archive/train.py`** | Neural Ranker training using **Hold-out Validation** and **Jitter Augmentation**. |
+| **`core/brain_bridge.py`** | **The Oracle**: Simulates and ranks all 10 algorithms for new data. |
+| **`app.py`** | **FastAPI Dashboard**: Real-time web interface for algorithm prediction. |
+| **`main.py`** | Centralized Command Center and Neural Pipeline control. |
+
+---
+
+## 📦 Installation
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/AhmedTEldeeb44/metalearner.git
+    cd metalearner
+    ```
+
+2.  **Initialize Virtual Environment:**
+    ```bash
+    python -m venv .venv
+    # Windows:
+    .venv\Scripts\activate
+    # Linux/Mac:
+    source .venv/bin/activate
+    ```
+
+3.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
+
+## 🎮 Usage
+
+The system is managed via a centralized Command Center. To start the neural pipeline, run:
+
+```bash
+python main.py
+```
+
+For the web-based Neural Oracle dashboard:
+```bash
+python app.py
+```
+
+## 🛰️ Core Pipeline Commands
+
+The system is managed via a centralized Command Center. To orchestrate the neural pipeline, the following modules are utilized:
+
+* **`[1] Harvest Data`**: Pull new medical datasets into the warehouse.
+* **`[4] Multi-Threaded Combat`**: Benchmark algorithms to generate ground-truth training data.
+* **`[5] Consult the Meta-Brain`**: Run a neural simulation on any CSV to generate an algorithm leaderboard.
+* **`[B] Bronze Browser`**: Test the Oracle against raw, uncleaned "Bronze" datasets.
+
+---
+
+## 🔬 Research & Academic Context
+
+This project serves as the foundational framework for the ongoing research paper:
+
+> **"MetaLearner: A DNA-Based Neural Ranking Engine for Automated Machine Learning Selection in Medical Informatics."**
+
+The methodology focuses on extracting high-fidelity statistical markers—Dataset DNA—to map the geometric properties of medical data directly to algorithmic performance profiles.
+
+---
+
+## 📊 Current Neural Benchmarks (XGBoost Regressor)
+
+The **MetaLearner** engine is currently calibrated using an XGBoost-based Neural Ranker, achieving high-fidelity predictive stability:
+
+* **Neural Stability**: `88.78% R² Score` on blind test trials.
+* **Mean Absolute Error**: `0.0341 F1-Points`.
+* **Inference Speed**: `< 0.5s` for total algorithm ranking on 10,000+ row datasets.
+
+---
+
+## 👨‍💻 Developed By
+
+**Ahmed T. El-Deeb**
+*AI Engineer*

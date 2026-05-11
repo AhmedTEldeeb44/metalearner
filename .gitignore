@@ -1,12 +1,43 @@
+# Python
 __pycache__/
 *.pyc
-data/
+*.pyo
+*.pyd
+.Python
+env/
 .venv/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# MetaLearner Specific
+data/
+cleaned_datasets/
+dirty_datasets/
+sucsses/
+unused/
 system_memory.json
+cleaning_intelligence_report.csv
+Specialized_Medical_Warehouse.csv
 *.csv
 *.pkl
 *.json
-cleaned_datasets/
-sucsses/
-brain/
-unused/
+!models/*.pkl
+!frontend/**
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

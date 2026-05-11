@@ -15,8 +15,9 @@ class MetaBrainBridge:
         self.ready = False
 
         # --- PATH RESOLUTION ---
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        brain_dir = os.path.join(base_dir, "brain")
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        brain_dir = os.path.join(base_dir, "models")
+
 
         self.paths = {
             "model": os.path.join(brain_dir, "meta_brain_final.pkl"),
@@ -34,13 +35,14 @@ class MetaBrainBridge:
                 self.scaler = joblib.load(self.paths["scaler"])
                 self.algo_encoder = joblib.load(self.paths["algo_encoder"])
                 self.ready = True
-                print(f"{Fore.GREEN}✅ Neural Ranker Online. Simulation engine ready.")
+                print(f"{Fore.GREEN}[OK] Neural Ranker Online. Simulation engine ready.")
             else:
                 print(
-                    f"{Fore.RED}⚠️ Neural Matrix Offline: Missing .pkl artifacts in /brain folder."
+                    f"{Fore.RED}[ERROR] Neural Matrix Offline: Missing .pkl artifacts in /models folder."
                 )
         except Exception as e:
-            print(f"{Fore.RED}💥 Neural Link Failed: {e}")
+            print(f"{Fore.RED}[CRITICAL] Neural Link Failed: {e}")
+
 
     def _extract_dna(self, df):
         """Calculates the core 10-dimensional DNA signature."""

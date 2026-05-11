@@ -16,10 +16,11 @@ streamlit
 colorama
 tqdm
 rich
+fastapi
+uvicorn
+python-multipart
 
 # --- System Utilities ---
 joblib
 
-matplotlib
-seaborn
 imblearn

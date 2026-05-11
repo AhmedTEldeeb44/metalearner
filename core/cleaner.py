@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 from colorama import Fore, Style
-from registry import SystemRegistry
+from .registry import SystemRegistry
 from sklearn.preprocessing import LabelEncoder
 
 

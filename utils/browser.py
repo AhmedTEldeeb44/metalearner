@@ -1,6 +1,6 @@
 import os
 from colorama import Fore, Style
-from brain_bridge import MetaBrainBridge
+from core.brain_bridge import MetaBrainBridge
 
 
 class BronzeBrowser:

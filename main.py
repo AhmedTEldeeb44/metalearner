@@ -5,16 +5,9 @@ from datetime import datetime
 from colorama import Fore, Style, init, Back
 
 # --- MODULE NAMESPACES (Required for Hot-Reload) ---
-import registry
-import downloader
-import cleaner
-import extractor
-import benchmarker
-import smart_mode
-import brain_bridge
-import analytics
-import memory_viewer
-import browser
+from core import registry, downloader, cleaner, extractor, benchmarker, brain_bridge
+from utils import smart_mode, analytics, memory_viewer, browser
+
 
 init(autoreset=True)
 

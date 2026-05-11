@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaLearner | Neural Oracle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-grid"></div>
+    <div class="blob-cont">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+
+
+    <div class="app-layout">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-logo">
+                <i class="fa-solid fa-brain logo-icon"></i>
+                <h2>MetaLearner</h2>
+            </div>
+
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Sidebar (Hidden by default or moved to a slide-out/modal style if needed, but here we'll just use the toggle btn) -->
+
+
+
+
+
+
+            <!-- VIEW: NEURAL ORACLE (Upload) - NOW THE LANDING PAGE -->
+            <section id="view-oracle" class="view-section active">
+                <div class="oracle-landing-content">
+                    <header class="minimal-header">
+                        <h1>Neural <span>Oracle</span></h1>
+                        <p>Upload your dataset and let the Meta-Brain predict the optimal algorithm.</p>
+                    </header>
+
+                <div class="upload-container">
+                    <section class="upload-section">
+                        <div id="drop-zone" class="drop-zone">
+                            <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                            <p>Drag & Drop your <strong>.csv</strong> file here</p>
+                            <p class="sub-text">or click to browse</p>
+                            <input type="file" id="file-input" accept=".csv" hidden>
+                        </div>
+                    </section>
+
+                    <section id="processing-state" class="processing-state hidden">
+                        <div class="brain-container">
+                            <div id="neural-brain" class="neural-brain">
+                                <!-- Brain lines will be injected here -->
+                                <div class="brain-core"></div>
+                            </div>
+                        </div>
+                        <p id="processing-text">Consulting the Oracle...</p>
+                    </section>
+
+                    <section id="result-section" class="result-section hidden">
+                        <div class="glass-card result-card">
+                            <div class="result-header">
+                                <h2><i class="fa-solid fa-ranking-star"></i> Prediction Complete</h2>
+                            </div>
+                            
+                            <div class="result-details">
+                                <div class="detail-item">
+                                    <span class="label">Filename</span>
+                                    <span id="res-filename" class="value file-val">dataset.csv</span>
+                                </div>
+                                <div class="detail-item highlight-item">
+                                    <span class="label">Optimal Algorithm</span>
+                                    <span id="res-algorithm" class="value algo-val">RandomForest</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Confidence Score</span>
+                                    <div class="confidence-bar-container">
+                                        <div id="confidence-bar" class="confidence-bar"></div>
+                                    </div>
+                                    <span id="res-confidence" class="value conf-val">95.5%</span>
+                                </div>
+                            </div>
+
+                            <div class="metrics-section">
+                                <h3><i class="fa-solid fa-dna"></i> Data DNA Signature</h3>
+                                <div class="metrics-grid">
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-table-cells"></i>
+                                        <span class="m-label">Rows</span>
+                                        <span class="m-value" id="m-rows">-</span>
+                                        <div class="tooltip">Total number of instances (observations) in the dataset.</div>
+                                    </div>
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-table-columns"></i>
+                                        <span class="m-label">Columns</span>
+                                        <span class="m-value" id="m-cols">-</span>
+                                        <div class="tooltip">Total number of features, including the target variable.</div>
+                                    </div>
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-wave-square"></i>
+                                        <span class="m-label">Entropy</span>
+                                        <span class="m-value" id="m-entropy">-</span>
+                                        <div class="tooltip">Measures the randomness or unpredictability of the target classes. Higher means more balanced complexity.</div>
+                                    </div>
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-scale-unbalanced"></i>
+                                        <span class="m-label">Imbalance</span>
+                                        <span class="m-value" id="m-imbalance">-</span>
+                                        <div class="tooltip">The disparity between class frequencies. 0 means perfectly balanced, higher means severe class dominance.</div>
+                                    </div>
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                        <span class="m-label">Skewness</span>
+                                        <span class="m-value" id="m-skew">-</span>
+                                        <div class="tooltip">Asymmetry of the feature distributions. High absolute values indicate long tails requiring transformation.</div>
+                                    </div>
+                                    <div class="metric-card tooltip-container">
+                                        <i class="fa-solid fa-droplet-slash"></i>
+                                        <span class="m-label">Null Density</span>
+                                        <span class="m-value" id="m-nulls">-</span>
+                                        <div class="tooltip">Percentage of missing values (NaNs) across the entire dataset matrix.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="reset-btn" class="glow-on-hover" style="margin-top: 2rem;">Analyze Another Dataset</button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

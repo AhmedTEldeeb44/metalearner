@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import skew, kurtosis
 from colorama import Fore, Style
-from registry import SystemRegistry
+from .registry import SystemRegistry
 
 
 def get_dataset_dna(df, target_col):

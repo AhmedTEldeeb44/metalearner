@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from colorama import Fore, Style
-from registry import SystemRegistry
+from core.registry import SystemRegistry
 
 
 class MemoryExplorer:
